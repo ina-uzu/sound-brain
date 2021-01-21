@@ -181,3 +181,60 @@ master가 한대인 경우 leader-elect = true는 scheduler 하나만 설정되�
 pod의 spec.schedulerName : xxx 으로 지정할 수 있다. 
 
 `k get events -o wide`로 어떤 스케줄러가 스케줄링 했는지 확인 가능
+
+#### Ex
+- —scheduler-name=my-scheduler
+- —leader-elect=false
+- port 설정을 겹치지 않게 한다
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    scheduler.alpha.kubernetes.io/critical-pod: ""
+  creationTimestamp: null
+  labels:
+    component: my-scheduler
+    tier: control-plane
+  name: my-scheduler
+  namespace: kube-system
+spec:
+  containers:
+  - command:
+    - kube-scheduler
+    - --address=127.0.0.1
+    - --kubeconfig=/etc/kubernetes/scheduler.conf
+    - --leader-elect=false # false
+    - --port=0 # http는 안 쓰는 걸로 명시 (or secure-port를 0으로 하고 여기에 새 port 명시)
+    - --scheduler-name=my-scheduler # 이름
+    - --secure-port=10282 # 새 scheduler port 값
+    image: k8s.gcr.io/kube-scheduler-amd64:v1.16.0
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 8
+      httpGet:
+        host: 127.0.0.1
+        path: /healthz
+        port: 10282 # 수정
+        scheme: HTTP
+      initialDelaySeconds: 15
+      timeoutSeconds: 15
+# ...
+```
+
+Pod에 scheduler 명시 
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotation-second-scheduler
+  labels:
+    name: multischeduler-example
+spec:
+  schedulerName: my-scheduler # here
+  containers:
+  - name: pod-with-second-annotation-container
+    image: k8s.gcr.io/pause:2.0
+```
