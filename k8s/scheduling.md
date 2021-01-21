@@ -140,7 +140,17 @@ pod마다 nodeName = {nodeName} 을 추가하여 각 노드마다 뜨게 한다.
 
 kube api server를 통하지 않고(k8s control plane에 의존하지 않음 → 마스터 노드의 control plane component들을 static pod으로 띄운다), 
 
-kubelet이  `/etc/kubernetes/manifest`  여기에 있는 pod yaml 파일을 보고 pod을 생성해준다. 
+kubelet이  staticPodPath (ex. `/etc/kubernetes/manifest`) 여기에 있는 pod yaml 파일을 보고 pod을 생성해준다. 
+
+#### ❤️ NOTE! staticPodPath 확인
+
+```bash
+ps -aux | grep kubelet
+# --config=/var/lib/kubelet/config.yaml 확인
+
+cat /var/lib/kubelet/config.yaml | grep staticPodPath
+```
+
 
 1. kubelet.service 옵션에  `—pod-manifest-path`  or
 2. kubelet.config 파일에 `staticPodPath`
