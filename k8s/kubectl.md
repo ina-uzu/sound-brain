@@ -52,7 +52,8 @@ kubectl get pods -o=jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.status.st
 # List Services Sorted by Name
 kubectl get services --sort-by=.metadata.name
 
-kubectl get services --sort-by=.metadata.name --no-headers | tac
+# desc
+kubectl get services --sort-by=.metadata.name --no-headers=true | tac
 ```
 
 ```bash
