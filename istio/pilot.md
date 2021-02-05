@@ -8,6 +8,8 @@
 
 ---
 
+
+
 ## Pilot Agent
 
 Pilot Agent는 Envoy config 파일을 생성하고 Envoy 프록시 실행을 담당한다.
@@ -1434,6 +1436,10 @@ Enovy에서 대상 port의 리스너를 찾지 못하고 요청한 경우 Istio�
 
 destination가 `PassthroughCluster`로 설정된 걸 볼 수 있다.
 
+
+
+
+
 ```
 $ istioctl proxy-config listener productpage-v1-64794f5db4-6bsbj --port 15001
 
@@ -1441,7 +1447,7 @@ ADDRESS PORT  MATCH         DESTINATION
 0.0.0.0 15001 ALL           PassthroughCluster
 0.0.0.0 15001 Addr: *:15001 Non-HTTP/Non-TCP
 ```
-
+에레
 **2) Outbound Listener**
 
 비즈니스 로직을 처리하는데 필요한 리스너 + istio 자체 컴포넌트 간의 통신을 처리하는데 필요한 리스너가 생성된다.
