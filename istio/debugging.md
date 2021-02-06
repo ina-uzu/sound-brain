@@ -22,6 +22,7 @@ istioctl proxy-status
 istioctl proxy-status {확인하고 싶은 서비스의 pod}
 ```
 
+
 ## Verifying connectivity to Istiod
 모든 사이드카 엔보이는 control plane인 istiod와 통신이 가능해야 한다. 
 ```bash
