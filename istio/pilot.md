@@ -687,6 +687,7 @@ istio envoy에 설정된 주요 cluster들을 살펴보자.
 
 **1) Outbound Cluster**
 
+
 대부분의 서비스가 outbound clsuter이다. (엔보이가 있는 pod이 아닌 다른 서비스)
 
 예를 들어, productpage의 envoy를 기준으로  하면 review, detail 서비스가 outbound cluster이다.
