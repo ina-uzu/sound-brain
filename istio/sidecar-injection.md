@@ -1,5 +1,5 @@
 # sidecar-injection
-### **Manual**
+### Manual
 
 istioctl kube-inject 명령어를 통해 envoy가 같이 띄워진 yaml 파일을 얻을 수 있다!
 
