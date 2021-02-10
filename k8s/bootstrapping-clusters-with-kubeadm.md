@@ -64,7 +64,7 @@ kubectl get nodes
 # master node 에서 
 kubeadm token create --print-join-command
 
-# 위 명령어 output 복붙
+# 위 명령어 output 복붙!
 ssh node01
 kubeadm join <control-plane-host>:<control-plane-port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
 ```
