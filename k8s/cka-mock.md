@@ -1,4 +1,4 @@
-## kubectl
+## kubectl!
 ```bash
 # context 변경
 kubelctl config --kubeconfig=my-kube-config use-context {contextName}
