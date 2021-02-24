@@ -6,7 +6,7 @@
 
 ---
 
-### EmptyDir
+### EmptyDir!
 
 emptyDir 볼륨은 **Pod가 노드에 할당 될 때 처음 생성되며 Pod가 해당 노드에서 실행되는 동안 존재**한다.
 
