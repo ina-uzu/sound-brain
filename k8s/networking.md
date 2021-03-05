@@ -74,7 +74,3 @@ pod/svc 가 생길 때마다 dns server에 추가된다.
 - config 파일이 필요하다 `kubectl get cm -n kube-system coredns`
 - kubelet에 dns server ip가 설정됨
 - search domain 은 service에 대해서만 되어있음
-
----
-
-[basic](https://www.notion.so/basic-5c93d3c869f3490b9b9eda5824d41634)
