@@ -1,7 +1,6 @@
 # core concepts
 
 ## Architecture
-
 ![core%20concepts%20c5a46924fbd64b648c6f57c30719799d/Untitled.png](core%20concepts%20c5a46924fbd64b648c6f57c30719799d/Untitled.png)
 
 1. authenticate user
