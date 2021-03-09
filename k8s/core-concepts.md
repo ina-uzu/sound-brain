@@ -37,5 +37,3 @@ kubeadm does not deploy kubelet
 pod network - internal network through all node
 
 service가 생기면 그에 맞는 rule을 추가한다 (iptable mode에서는 iptable rule 추가) 
-
----
