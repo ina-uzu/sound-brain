@@ -11,7 +11,7 @@
 6. kubelet : api 서버가 해당 노드 kubelet에 알림
 7. update ETCD : pod이 다 뜨면 kubelet이 api에 알려주고, api가 etcd에 status 변경함
 
-### Controller Manager
+### Controller Manager!
 
 ![core%20concepts%20c5a46924fbd64b648c6f57c30719799d/Untitled%201.png](core%20concepts%20c5a46924fbd64b648c6f57c30719799d/Untitled%201.png)
 
