@@ -69,7 +69,6 @@ service가 생기면 그에 맞는 rule을 추가한다 (iptable mode에서는 i
     - ExternalName : 클러스터 외부의 서비스로 접근할때 사용합니다. dns를 지정하면 그걸 cname으로 돌려줍니다.
 
 - ingress
-
     kubernetes 클러스터 외부에서 클러스터 내부의 pod로 접근할때 사용합니다.서비스의 NodePort를 사용하면 간단하게 클러스터 외부에서 내부의 포드로 접근이 가능하지만 그보다 더 많은 기능을 이용하고 싶을때 사용합니다.
 
     kubernetes내부에 ingress라는 리소스를 정의해 놓으면 그 정보를 기반으로 ingress-controller가 ingress에 정의된대로 외부에서 접근가능하게 설정을 해줍니다.ingress-controller는 여러가지 종류가 있지만 dkosv3에서는 ingress-nginx-controller를 붙여놓았습니다.그래서 nginx의 다양한 기능을 사용할 수 있습니다.ingress노드를 추가하고 클러스터에 ingress를 정의해주면 nginx의 설정이 업데이트되서 반영됩니다.
